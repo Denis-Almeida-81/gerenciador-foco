@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Roboto", sans-serif;
+
+  background-color: #f1f5f9;
+
+  color: #1e293b;
+}
+
+#root {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 40px 20px;
+}
