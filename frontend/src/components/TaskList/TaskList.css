@@ -11,3 +11,9 @@ ul {
 
   gap: 14px;
 }
+.mensagem-vazia {
+  text-align: center;
+  margin: 20px 0;
+  color: #64748b;
+  font-size: 14px;
+}

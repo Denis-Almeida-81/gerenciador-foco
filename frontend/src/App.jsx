@@ -145,7 +145,7 @@ function App() {
     <main className="main-content">
       <h1>Gerenciador de Foco</h1>
 
-      <p>
+      <p className="descrição">
         Organize suas tarefas e não esqueça do que é importante.
       </p>
 
@@ -256,6 +256,7 @@ function App() {
 
       <TaskList
         tarefas={ordenarTarefas(filtrarTarefas(tarefas))}
+        filtro={filtro}
         alternarTarefa={alternarTarefa}
         excluirTarefa={excluirTarefa}
         editarTarefa={editarTarefa}

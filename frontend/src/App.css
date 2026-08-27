@@ -36,10 +36,10 @@ h1 {
   color: #1e293b;
 }
 
-.main-content > p {
+.descrição {
   margin: 0 0 10px;
 
-  font-size: 17px;
+  font-size: 18px;
 
   color: #475569;
 }
