@@ -2,13 +2,7 @@
   display: grid;
 
   grid-template-columns:
-    24px
-    minmax(0, 1fr)
-    65px
-    90px
-    55px
-    24px
-    148px;
+    24px minmax(0, 1fr) 90px 55px 226px 24px;
 
   align-items: center;
   gap: 12px;
@@ -72,40 +66,6 @@
 }
 
 /* =========================
-   PRIORIDADE
-========================= */
-
-.prioridade {
-  width: 65px;
-
-  padding: 5px 6px;
-
-  text-align: center;
-
-  border-radius: 7px;
-
-  font-size: 13px;
-  font-weight: 600;
-
-  box-sizing: border-box;
-}
-
-.prioridade-alta {
-  background-color: #fee2e2;
-  color: #dc2626;
-}
-
-.prioridade-media {
-  background-color: #fef3c7;
-  color: #d97706;
-}
-
-.prioridade-baixa {
-  background-color: #dcfce7;
-  color: #16a34a;
-}
-
-/* =========================
    DATA
 ========================= */
 
@@ -157,9 +117,6 @@
   box-sizing: border-box;
 }
 
-.tarefa-atrasada.sem-atraso {
-  visibility: hidden;
-}
 
 /* =========================
    AÇÕES
@@ -173,7 +130,7 @@
 
   gap: 8px;
 
-  width: 148px;
+  width: 226px;
 }
 
 .task-actions button {
@@ -206,12 +163,12 @@
   transform: translateY(-1px);
 }
 
-.task-actions button:last-child {
+.task-actions button:last-of-type {
   background-color: #ef4444;
   color: #ffffff;
 }
 
-.task-actions button:last-child:hover {
+.task-actions button:last-of-type:hover {
   background-color: #dc2626;
   transform: translateY(-1px);
 }
@@ -222,50 +179,18 @@
 
 .task-item:not(:has(.task-actions)) {
   grid-template-columns:
-    24px
-    minmax(0, 1fr)
-    90px
-    90px
-    100px
-    70px
-    80px;
+    24px minmax(0, 1fr) 90px 90px 100px 80px;
 }
 
 .task-item input[type="text"],
 .task-item input[type="time"],
 .task-item input[type="date"],
-.task-item select {
-  width: 100%;
-  min-width: 0;
-
-  height: 38px;
-
-  padding: 0 8px;
-
-  border: 1px solid #cbd5e1;
-  border-radius: 7px;
-
-  background-color: #ffffff;
-
-  font-family: inherit;
-  font-size: 13px;
-
-  box-sizing: border-box;
-}
-
 .task-item input:focus,
-.task-item select:focus {
-  outline: none;
 
-  border-color: #3b82f6;
-
-  box-shadow:
-    0 0 0 3px rgba(59, 130, 246, 0.12);
-}
 
 /* Botões Salvar / Cancelar */
 
-.task-item:not(:has(.task-actions)) > button {
+.task-item:not(:has(.task-actions))>button {
   width: 100%;
   height: 38px;
 
@@ -281,12 +206,12 @@
   cursor: pointer;
 }
 
-.task-item:not(:has(.task-actions)) > button:first-of-type {
+.task-item:not(:has(.task-actions))>button:first-of-type {
   background-color: #3b82f6;
   color: #ffffff;
 }
 
-.task-item:not(:has(.task-actions)) > button:last-of-type {
+.task-item:not(:has(.task-actions))>button:last-of-type {
   background-color: #ef4444;
   color: #ffffff;
 }
@@ -294,24 +219,17 @@
 /* =========================
    RESPONSIVO
 ========================= */
-
 @media (max-width: 800px) {
   .task-item {
     grid-template-columns:
-      24px
-      minmax(0, 1fr)
-      60px
-      80px
-      50px
-      24px
-      120px;
+      24px minmax(0, 1fr) 60px 50px 184px 24px;
 
     gap: 8px;
     padding: 16px;
   }
 
   .task-actions {
-    width: 120px;
+    width: 184px;
   }
 
   .task-actions button {

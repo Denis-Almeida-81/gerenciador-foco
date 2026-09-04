@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import './TaskItem.css'
 
-function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa }) {
+function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa, alternarAlarme }) {
   const [editando, setEditando] = useState(false)
   const [textoEditando, setTextoEditando] = useState(tarefa.texto)
-  const [prioridadeEditando, setPrioridadeEditando] = useState(tarefa.prioridade || 'media')
   const [horarioEditando, setHorarioEditando] = useState(tarefa.horario || '')
   const [dataEditando, setDataEditando] = useState(tarefa.data || '')
 
@@ -12,7 +11,6 @@ function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa }) {
     editarTarefa(
       tarefa.id,
       textoEditando,
-      prioridadeEditando,
       horarioEditando,
       dataEditando
     )
@@ -61,16 +59,6 @@ function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa }) {
             onChange={(e) => setTextoEditando(e.target.value)}
           />
 
-          <select
-            className="prioridade-select"
-            value={prioridadeEditando}
-            onChange={(e) => setPrioridadeEditando(e.target.value)}
-          >
-            <option value="baixa">Baixa</option>
-            <option value="media">Média</option>
-            <option value="alta">Alta</option>
-          </select>
-
           <input
             type="time"
             value={horarioEditando}
@@ -100,10 +88,6 @@ function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa }) {
             {tarefa.texto}
           </label>
 
-          <span className={`prioridade prioridade-${tarefa.prioridade}`}>
-            {tarefa.prioridade}
-          </span>
-
           <span className="data-tarefa">
             {formatarData(tarefa.data)}
           </span>
@@ -112,17 +96,13 @@ function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa }) {
             {tarefa.horario}
           </span>
 
-          {tarefaAtrasada() && (
-            <span
-              className={`tarefa-atrasada ${tarefaAtrasada() ? '' : 'sem-atraso'
-                }`}
-              title={tarefaAtrasada() ? 'Tarefa atrasada' : ''}
-            >
-              {tarefaAtrasada() ? '!' : ''}
-            </span>
-          )}
-
           <div className="task-actions">
+            <button
+              onClick={() => alternarAlarme(tarefa.id)}
+              title={tarefa.alarme ? 'Desativar alarme' : 'Ativar alarme'}
+            >
+              {tarefa.alarme ? '🔔' : '🔕'}
+            </button>
             <button
               onClick={() => {
                 setTextoEditando(tarefa.texto)
@@ -134,10 +114,29 @@ function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa }) {
               Editar
             </button>
 
-            <button onClick={() => excluirTarefa(tarefa.id)}>
+            <button
+              onClick={() => {
+                const confirmou = window.confirm(
+                  'Tem certeza que deseja excluir esta tarefa?'
+                )
+
+                if (confirmou) {
+                  excluirTarefa(tarefa.id)
+                }
+              }}
+            >
               Excluir
             </button>
+            
           </div>
+          {tarefaAtrasada() && (
+              <span
+                className="tarefa-atrasada"
+                title="Tarefa atrasada"
+              >
+                !
+              </span>
+            )}
         </>
       )}
     </li>
