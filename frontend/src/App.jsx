@@ -150,19 +150,25 @@ function App() {
 
   return (
     <main className="main-content">
-      <h1>Gerenciador de Foco</h1>
 
-      <p className="descrição">
-        Organize suas tarefas e não esqueça do que é importante.
-      </p>
+      <header className="app-header">
+        <div>
+          <h1>Gerenciador de Foco</h1>
 
-      <button
-        onClick={() => {
-          setFormularioAberto(true)
-        }}
-      >
-        Nova Tarefa
-      </button>
+          <p className="descrição">
+            Organize suas tarefas e não esqueça do que é importante.
+          </p>
+        </div>
+
+        <button
+          className="btn-nova-tarefa"
+          onClick={() => {
+            setFormularioAberto(true)
+          }}
+        >
+          + Nova Tarefa
+        </button>
+      </header>
 
       {formularioAberto && (
         <TaskForm

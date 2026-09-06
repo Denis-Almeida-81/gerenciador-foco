@@ -24,55 +24,53 @@
 }
 
 /* =========================
-   TÍTULO
+   CABEÇALHO
 ========================= */
 
-h1 {
-  margin: 0;
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 30px;
+}
 
+.app-header h1 {
+  margin: 0;
   font-size: 36px;
   font-weight: 700;
-
   color: #1e293b;
 }
 
-.descrição {
-  margin: 0 0 10px;
-
-  font-size: 18px;
-
-  color: #475569;
+.app-header .descrição {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: #64748b;
 }
 
-/* =========================
-   BOTÕES GERAIS
-========================= */
-
-button {
-  padding: 10px 20px;
-
+.btn-nova-tarefa {
+  flex-shrink: 0;
+  padding: 11px 20px;
   border: none;
-  border-radius: 9px;
-
+  border-radius: 10px;
   font-family: inherit;
   font-size: 15px;
-  font-weight: 500;
-
+  font-weight: 600;
   color: #ffffff;
   background-color: #3b82f6;
-
   cursor: pointer;
-
   transition:
     background-color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-button:hover {
+.btn-nova-tarefa:hover {
   background-color: #2563eb;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
 }
 
-button:active {
+.btn-nova-tarefa:active {
   transform: scale(0.98);
 }
 
@@ -112,6 +110,7 @@ select:focus {
   box-shadow:
     0 0 0 3px rgba(59, 130, 246, 0.12);
 }
+
 .input-erro {
   border-color: #ef4444 !important;
 }
@@ -120,6 +119,7 @@ select:focus {
   border-color: #ef4444 !important;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
 }
+
 .mensagem-erro {
   color: #b91c1c;
   font-size: 14px;
@@ -149,16 +149,26 @@ h2 {
 ========================= */
 
 @media (max-width: 800px) {
+
   .main-content {
     padding: 30px 20px;
   }
 
-  h1 {
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .app-header h1 {
     font-size: 30px;
   }
 
-  .main-content > p {
-    text-align: center;
+  .app-header .descrição {
+    font-size: 15px;
   }
- 
+
+  .btn-nova-tarefa {
+    width: 100%;
+  }
 }

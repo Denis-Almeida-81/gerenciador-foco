@@ -1,9 +1,0 @@
-function TaskAlarme() {
-  return (
-    <div>
-      <p>Alarme</p>
-    </div>
-  )
-}
-
-export default TaskAlarme

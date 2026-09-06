@@ -35,6 +35,7 @@ function TaskList({
     <ul>
       {tarefas.map(tarefa => (
         <TaskItem
+          key={tarefa.id}
           tarefa={tarefa}
           alternarTarefa={alternarTarefa}
           excluirTarefa={excluirTarefa}

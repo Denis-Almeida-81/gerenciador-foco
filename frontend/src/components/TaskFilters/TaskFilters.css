@@ -42,3 +42,18 @@
 
   font-weight: 700;
 }
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 800px) {
+  .filtros {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filtro-botao {
+    flex: 1;
+    min-width: 140px;
+  }
+}
