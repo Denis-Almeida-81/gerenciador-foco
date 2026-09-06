@@ -1,16 +1,66 @@
-# React + Vite
+# ⏱️ Gerenciador de Foco
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicação web desenvolvida com **React** para organização de tarefas e gerenciamento da rotina.
 
-Currently, two official plugins are available:
+O projeto foi desenvolvido durante meus estudos de Front-end, utilizando componentes, gerenciamento de estado, formulários, validações, filtros e interação com o usuário.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologias
 
-## React Compiler
+- React
+- JavaScript
+- Vite
+- HTML5
+- CSS3
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades
 
-## Expanding the Oxlint configuration
+- Adicionar novas tarefas
+- Definir prioridade das tarefas
+- Definir data e horário
+- Validação dos campos
+- Contagem de tarefas
+- Filtros para organização das tarefas
+- Gerenciamento do estado da aplicação com React
+- Interface responsiva
+- Alarmes para tarefas com horário definido
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🧠 Conceitos praticados
+
+Durante o desenvolvimento foram aplicados conceitos importantes de React e JavaScript, como:
+
+- Componentização
+- `useState`
+- `useEffect`
+- Eventos e manipulação de formulários
+- Renderização condicional
+- `map()` para renderização de listas
+- Filtros e manipulação de arrays
+- Props
+- Organização de componentes
+- Gerenciamento de estado
+- Validação de dados
+- Responsividade com CSS
+
+## 📱 Responsividade
+
+A aplicação foi desenvolvida para funcionar em diferentes tamanhos de tela, incluindo computadores, tablets e dispositivos móveis.
+
+## 🖥️ Projeto
+
+O projeto está em constante evolução e novas funcionalidades poderão ser adicionadas conforme avanço nos estudos de React e desenvolvimento Front-end.
+
+## 📸 Preview
+
+![Gerenciador de Foco](./screenshot.png)
+
+## 🌐 Acesse o projeto
+
+[🔗 Acessar aplicação](COLE_AQUI_O_LINK_DO_PROJETO)
+
+## 👨‍💻 Autor
+
+**Denis Almeida**
+
+Estudante de Desenvolvimento Front-end, com foco em HTML, CSS, JavaScript e React.
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Denis-Almeida-81)
