@@ -1,3 +1,7 @@
+/* =========================
+   LISTA DE TAREFAS
+========================= */
+
 ul {
   list-style: none;
 
@@ -9,11 +13,52 @@ ul {
   display: flex;
   flex-direction: column;
 
-  gap: 14px;
+  gap: 12px;
 }
+
+
+/* =========================
+   MENSAGEM DE LISTA VAZIA
+========================= */
+
 .mensagem-vazia {
+  width: 100%;
+
+  margin: 24px 0;
+
+  padding: 24px 16px;
+
+  box-sizing: border-box;
+
   text-align: center;
-  margin: 20px 0;
+
   color: #64748b;
+
   font-size: 14px;
+  font-weight: 500;
+
+  background-color: #ffffff;
+
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 800px) {
+
+  ul {
+    gap: 10px;
+  }
+
+  .mensagem-vazia {
+    margin: 20px 0;
+
+    padding: 20px 14px;
+
+    font-size: 13px;
+  }
 }

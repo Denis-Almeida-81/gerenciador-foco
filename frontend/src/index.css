@@ -1,6 +1,15 @@
+/* =========================
+   RESET
+========================= */
+
 * {
   box-sizing: border-box;
 }
+
+
+/* =========================
+   ESTRUTURA
+========================= */
 
 html,
 body,
@@ -11,13 +20,26 @@ body,
 body {
   margin: 0;
 
-  font-family: "Roboto", sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
 
-  background-color: #f1f5f9;
+  font-family: Arial, Helvetica, sans-serif;
 
-  color: #1e293b;
+  background:
+    linear-gradient(
+      135deg,
+      #cbd5e1 0%,
+      #e2e8f0 50%,
+      #cbd5e1 100%
+    );
+
+  color: #0f172a;
 }
 
+
+/* =========================
+   ROOT
+========================= */
 #root {
   min-height: 100vh;
 
@@ -27,4 +49,18 @@ body {
   align-items: flex-start;
 
   padding: 40px 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 800px) {
+
+  #root {
+    padding: 20px 10px;
+  }
 }

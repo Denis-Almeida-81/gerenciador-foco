@@ -29,6 +29,7 @@ function TaskAlarme({ tarefas }) {
                     !tarefa.concluida &&
                     tarefa.alarme
             )
+
             tarefasEncontradas.forEach(tarefa => {
                 if (!tarefasAvisadas.current.has(tarefa.id)) {
                     new Notification('Gerenciador de Foco', {
@@ -46,11 +47,7 @@ function TaskAlarme({ tarefas }) {
         }
     }, [tarefas])
 
-    return (
-        <div>
-            <p>Total de tarefas: {tarefas.length}</p>
-        </div>
-    )
+    return null
 }
 
 export default TaskAlarme

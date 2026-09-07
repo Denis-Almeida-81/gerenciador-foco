@@ -4,43 +4,134 @@
 
 .resumo-tarefas {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+
+  gap: 14px;
+
   width: 100%;
-  margin: 5px 0 10px;
+
+  margin: 4px 0 12px;
 }
+
+
+/* =========================
+   CARD
+========================= */
 
 .card-resumo {
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
-  gap: 6px;
-  min-height: 90px;
+
+  gap: 7px;
+
+  min-height: 92px;
+
   padding: 16px 18px;
+
   box-sizing: border-box;
 
   background-color: #ffffff;
+
   border: 1px solid #e2e8f0;
+
   border-radius: 14px;
 
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.04);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
+
+
+/* =========================
+   HOVER
+========================= */
+
+.card-resumo:hover {
+  border-color: #cbd5e1;
+
+  box-shadow:
+    0 6px 14px rgba(15, 23, 42, 0.08);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   LABEL
+========================= */
 
 .label-resumo {
-  font-size: 13px;
+  font-size: 12px;
+
   font-weight: 600;
+
   color: #64748b;
+
+  line-height: 1.2;
 }
 
+
+/* =========================
+   NÚMERO
+========================= */
+
 .card-resumo strong {
-  font-size: 28px;
+  font-size: 30px;
+
+  line-height: 1;
+
   font-weight: 700;
-  color: #1e293b;
+
+  color: #0f172a;
 }
+
+
+/* =========================
+   CARD PENDENTES
+========================= */
+
+.card-pendentes {
+  border-color: #dbeafe;
+}
+
+.card-pendentes .label-resumo {
+  color: #2563eb;
+}
+
+
+/* =========================
+   CARD CONCLUÍDAS
+========================= */
+
+.card-concluidas {
+  border-color: #dcfce7;
+}
+
+.card-concluidas .label-resumo {
+  color: #16a34a;
+}
+
+
+/* =========================
+   CARD ATRASADAS
+========================= */
 
 .card-atrasadas {
   border-color: #fecaca;
+
   background-color: #fffafa;
+}
+
+.card-atrasadas:hover {
+  border-color: #fca5a5;
 }
 
 .card-atrasadas .label-resumo {
@@ -60,13 +151,49 @@
 
   .resumo-tarefas {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+
+    gap: 11px;
+
+    margin-bottom: 14px;
   }
 
   .card-resumo {
-    min-height: 80px;
+    min-height: 82px;
+
+    padding: 14px 15px;
+
+    border-radius: 12px;
   }
 
+  .label-resumo {
+    font-size: 11px;
+  }
+
+  .card-resumo strong {
+    font-size: 25px;
+  }
+}
+
+
+/* =========================
+   TELAS MUITO PEQUENAS
+========================= */
+
+@media (max-width: 380px) {
+
+  .resumo-tarefas {
+    gap: 9px;
+  }
+
+  .card-resumo {
+    min-height: 78px;
+
+    padding: 12px;
+  }
+
+  .card-resumo strong {
+    font-size: 23px;
+  }
 }
 
 

@@ -6,32 +6,70 @@
   display: flex;
 
   justify-content: center;
+  align-items: center;
 
   gap: 10px;
 
-  margin: 5px 0;
+  width: 100%;
+
+  margin: 4px 0 8px;
 }
 
+
+/* =========================
+   BOTÃO DO FILTRO
+========================= */
+
 .filtro-botao {
-  padding: 9px 18px;
+  min-width: 92px;
+
+  height: 38px;
+
+  padding: 0 16px;
 
   border: 1px solid #cbd5e1;
+
   border-radius: 9px;
 
-  background-color: #e2e8f0;
+  background-color: #f1f5f9;
 
-  color: #334155;
+  color: #475569;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 500;
 
   cursor: pointer;
 
   transition:
     background-color 0.2s ease,
-    color 0.2s ease;
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
+
+/* =========================
+   HOVER
+========================= */
+
 .filtro-botao:hover {
-  background-color: #cbd5e1;
+  border-color: #94a3b8;
+
+  background-color: #e2e8f0;
+
+  color: #1e293b;
+
+  transform: translateY(-1px);
 }
+
+
+/* =========================
+   FILTRO ATIVO
+========================= */
 
 .filtro-botao.filtro-ativo {
   border-color: #334155;
@@ -40,20 +78,73 @@
 
   color: #ffffff;
 
-  font-weight: 700;
+  font-weight: 600;
+
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.12);
 }
+
+
+/* =========================
+   HOVER FILTRO ATIVO
+========================= */
+
+.filtro-botao.filtro-ativo:hover {
+  border-color: #1e293b;
+
+  background-color: #1e293b;
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
 /* =========================
    RESPONSIVO
 ========================= */
 
 @media (max-width: 800px) {
+
   .filtros {
-    flex-wrap: wrap;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
     gap: 8px;
+
+    margin: 4px 0 8px;
   }
 
   .filtro-botao {
-    flex: 1;
-    min-width: 140px;
+    width: 100%;
+
+    min-width: 0;
+
+    height: 36px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================
+   TELAS MUITO PEQUENAS
+========================= */
+
+@media (max-width: 380px) {
+
+  .filtros {
+    gap: 6px;
+  }
+
+  .filtro-botao {
+    height: 35px;
+
+    padding: 0 6px;
+
+    font-size: 11px;
   }
 }
