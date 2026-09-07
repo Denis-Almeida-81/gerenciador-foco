@@ -1,12 +1,49 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import './TaskAlarme.css'
 
 function TaskAlarme({ tarefas }) {
 
     const tarefasAvisadas = useRef(new Set())
+    const audioContext = useRef(null)
+    const osciladorAlarme = useRef(null)
+    const [alarmeAtivo, setAlarmeAtivo] = useState(null)
+    function tocarAlarme(tarefa) {
+        if (!audioContext.current) {
+            audioContext.current = new AudioContext()
+        }
 
-    useEffect(() => {
-        Notification.requestPermission()
-    }, [])
+        const contexto = audioContext.current
+
+        if (contexto.state === 'suspended') {
+            contexto.resume()
+        }
+
+        const oscilador = contexto.createOscillator()
+        const ganho = contexto.createGain()
+
+        oscilador.type = 'sine'
+        oscilador.frequency.value = 800
+
+        ganho.gain.value = 0.3
+
+        oscilador.connect(ganho)
+        ganho.connect(contexto.destination)
+
+        oscilador.start()
+
+        osciladorAlarme.current = oscilador
+
+        setAlarmeAtivo(tarefa)
+    }
+    function pararAlarme() {
+        if (osciladorAlarme.current) {
+            osciladorAlarme.current.stop()
+            osciladorAlarme.current = null
+        }
+
+        setAlarmeAtivo(null)
+    }
+
 
     useEffect(() => {
         const intervalo = setInterval(() => {
@@ -31,12 +68,13 @@ function TaskAlarme({ tarefas }) {
             )
 
             tarefasEncontradas.forEach(tarefa => {
-                if (!tarefasAvisadas.current.has(tarefa.id)) {
-                    new Notification('Gerenciador de Foco', {
-                        body: `Hora da tarefa: ${tarefa.texto}`
-                    })
+                const chaveAlarme = `${tarefa.id}-${tarefa.data}-${tarefa.horario}`
 
-                    tarefasAvisadas.current.add(tarefa.id)
+                if (!tarefasAvisadas.current.has(chaveAlarme)) {
+
+                    tocarAlarme(tarefa)
+
+                    tarefasAvisadas.current.add(chaveAlarme)
                 }
             })
 
@@ -47,7 +85,28 @@ function TaskAlarme({ tarefas }) {
         }
     }, [tarefas])
 
-    return null
+    return (
+        <>
+            {alarmeAtivo && (
+                <div className="alarme-painel">
+                    <strong className="alarme-titulo">
+                        🔔 Alarme ativo
+                    </strong>
+
+                    <p className="alarme-tarefa">
+                        Hora da tarefa: <span>{alarmeAtivo.texto}</span>
+                    </p>
+
+                    <button
+                        className="alarme-parar"
+                        onClick={pararAlarme}
+                    >
+                        Parar alarme
+                    </button>
+                </div>
+            )}
+        </>
+    )
 }
 
 export default TaskAlarme

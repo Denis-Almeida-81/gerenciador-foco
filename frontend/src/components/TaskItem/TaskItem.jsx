@@ -98,6 +98,7 @@ function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa, alterna
 
           <div className="task-actions">
             <button
+              className={tarefa.alarme ? 'alarme-ativo' : 'alarme-inativo'}
               onClick={() => alternarAlarme(tarefa.id)}
               title={tarefa.alarme ? 'Desativar alarme' : 'Ativar alarme'}
             >
@@ -127,16 +128,16 @@ function TaskItem({ tarefa, alternarTarefa, excluirTarefa, editarTarefa, alterna
             >
               Excluir
             </button>
-            
+
           </div>
           {tarefaAtrasada() && (
-              <span
-                className="tarefa-atrasada"
-                title="Tarefa atrasada"
-              >
-                !
-              </span>
-            )}
+            <span
+              className="tarefa-atrasada"
+              title="Tarefa atrasada"
+            >
+              !
+            </span>
+          )}
         </>
       )}
     </li>

@@ -1,0 +1,101 @@
+/* =========================
+   PAINEL DO ALARME
+========================= */
+
+.alarme-painel {
+  margin-top: 20px;
+  padding: 18px 20px;
+
+  background-color: #fff7ed;
+
+  border: 1px solid #fed7aa;
+  border-left: 4px solid #f97316;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.06);
+
+  text-align: center;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.alarme-titulo {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #c2410c;
+}
+
+
+/* =========================
+   TAREFA
+========================= */
+
+.alarme-tarefa {
+  margin: 0 0 14px;
+
+  font-size: 13px;
+
+  color: #475569;
+}
+
+.alarme-tarefa span {
+  font-weight: 700;
+
+  color: #1e293b;
+}
+
+
+/* =========================
+   BOTÃO PARAR
+========================= */
+
+.alarme-parar {
+  min-width: 130px;
+  height: 36px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #f97316;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.alarme-parar:hover {
+  background-color: #ea580c;
+
+  box-shadow:
+    0 4px 10px rgba(234, 88, 12, 0.20);
+
+  transform: translateY(-1px);
+}
+
+
+.alarme-parar:active {
+  transform: scale(0.97);
+}
